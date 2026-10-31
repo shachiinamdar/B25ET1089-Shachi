@@ -1,46 +1,45 @@
 #include <iostream>
+#include <string>
 using namespace std;
 
-class Complex
+class String
 {
-    int real, imag;
+    string str;
 
 public:
+    // Function to accept a string
     void getData()
     {
-        cout << "Enter real and imaginary parts: ";
-        cin >> real >> imag;
+        cout << "Enter a string: ";
+        getline(cin, str);
     }
 
+    // Function to display the string
     void display()
     {
-        cout << real << " + " << imag << "i" << endl;
-    }
-
-    // Overloading * operator
-    Complex operator*(int n)
-    {
-        Complex temp;
-        temp.real = real * n;
-        temp.imag = imag * n;
-        return temp;
+        cout << str << endl;
     }
 };
 
 int main()
 {
-    Complex c1, c2;
-    int n;
+    // Create two objects
+    String s1, s2;
 
-    c1.getData();
+    // Accept first string
+    cout << "Enter first string:" << endl;
+    s1.getData();
 
-    cout << "Enter scalar value: ";
-    cin >> n;
+    // Accept second string
+    cout << "Enter second string:" << endl;
+    s2.getData();
 
-    c2 = c1 * n;
+    // Display both strings
+    cout << "\nFirst string: ";
+    s1.display();
 
-    cout << "Result: ";
-    c2.display();
+    cout << "Second string: ";
+    s2.display();
 
     return 0;
 }
